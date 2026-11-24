@@ -1,3 +1,5 @@
+/* ESTILOS GENERALES */
+
 * {
     margin: 0;
     padding: 0;
@@ -6,7 +8,7 @@
 
 body {
     font-family: Arial, sans-serif;
-    background: #F8F3ED;
+    background-color: #F8F3ED;
     color: #302522;
     line-height: 1.6;
 }
@@ -14,7 +16,7 @@ body {
 /* ENCABEZADO */
 
 header {
-    background: #65001F;
+    background-color: #65001F;
     color: white;
     padding: 15px 5%;
     display: flex;
@@ -27,24 +29,26 @@ header {
 .marca {
     display: flex;
     align-items: center;
-    gap: 10px;
-    color: white;
+    gap: 12px;
     text-decoration: none;
-    font-size: 23px;
+    color: white;
+    font-size: 25px;
     font-weight: bold;
 }
 
 .marca img {
-    width: 55px;
-    height: 55px;
+    width: 60px;
+    height: 60px;
     object-fit: cover;
     border-radius: 50%;
 }
 
+/* MENÚ */
+
 nav {
     display: flex;
+    gap: 20px;
     flex-wrap: wrap;
-    gap: 18px;
 }
 
 nav a {
@@ -57,23 +61,22 @@ nav a {
 nav a:hover,
 nav a.activo {
     color: #E6C9B8;
-    text-decoration: underline;
 }
 
 /* PORTADA */
 
 .portada {
+    min-height: 400px;
     display: flex;
-    align-items: center;
     justify-content: center;
-    gap: 40px;
+    align-items: center;
     padding: 60px 8%;
-    flex-wrap: wrap;
+    background-color: #F0E2D8;
 }
 
 .portada-texto {
-    flex: 1;
-    min-width: 260px;
+    max-width: 750px;
+    text-align: center;
 }
 
 .subtitulo {
@@ -91,224 +94,139 @@ nav a.activo {
 
 .portada-texto p {
     margin-bottom: 20px;
-}
-
-.portada-imagen {
-    flex: 1;
-    min-width: 260px;
-    text-align: center;
-}
-
-.portada-imagen img {
-    width: 100%;
-    max-width: 430px;
-    height: 380px;
-    object-fit: contain;
-    border-radius: 15px;
+    font-size: 17px;
 }
 
 /* BOTONES */
 
 .boton {
     display: inline-block;
-    background: #65001F;
+    background-color: #65001F;
     color: white;
     padding: 12px 22px;
-    border: none;
-    border-radius: 7px;
+    border-radius: 8px;
     text-decoration: none;
+    font-weight: bold;
+    border: none;
     cursor: pointer;
-    font-size: 15px;
     transition: 0.3s;
+    margin-top: 10px;
 }
 
 .boton:hover {
-    background: #B58B83;
-    color: white;
+    background-color: #B58B83;
+    transform: translateY(-2px);
 }
 
-/* SECCIONES */
-
-.bienvenida,
-.destacados {
-    text-align: center;
-    padding: 45px 7%;
-}
+/* BIENVENIDA */
 
 .bienvenida {
-    background: #F0E2D8;
+    text-align: center;
+    padding: 45px 20px;
 }
 
-.bienvenida h2,
-.destacados h2 {
+.bienvenida h2 {
     color: #65001F;
     font-family: Georgia, serif;
     font-size: 30px;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
 }
 
-.bienvenida .boton,
-.destacados > .boton {
-    margin-top: 20px;
+.bienvenida p {
+    margin-bottom: 15px;
 }
 
 /* PRODUCTOS */
 
-.contenedor {
-    width: 90%;
-    max-width: 1150px;
-    margin: 40px auto;
-}
-
-.encabezado-pagina {
+.destacados {
+    padding: 45px 6%;
     text-align: center;
-    margin-bottom: 35px;
 }
 
-.encabezado-pagina h1 {
+.destacados > h2 {
     color: #65001F;
     font-family: Georgia, serif;
-    font-size: 36px;
-    margin-bottom: 10px;
+    font-size: 32px;
+    margin-bottom: 30px;
 }
 
 .productos {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 25px;
-    margin: 30px 0;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    width: 100%;
+    margin: 30px auto;
 }
 
 .producto {
-    background: white;
-    padding: 18px;
+    background-color: white;
+    padding: 16px;
     border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     text-align: center;
-    box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: 0.3s;
+}
+
+.producto:hover {
+    transform: translateY(-5px);
 }
 
 .producto img {
     width: 100%;
-    height: 240px;
+    height: 200px;
     object-fit: contain;
+    border-radius: 8px;
     margin-bottom: 12px;
 }
 
 .producto h2,
 .producto h3 {
     color: #65001F;
+    font-size: 20px;
     margin-bottom: 8px;
 }
 
 .producto p {
-    margin-bottom: 15px;
+    margin-bottom: 8px;
 }
 
-/* FORMULARIO */
+/* PRECIOS */
 
-.formulario {
-    background: #F0E2D8;
-    max-width: 650px;
-    margin: auto;
-    padding: 30px;
-    border-radius: 15px;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-.formulario label {
+.precio {
     color: #65001F;
+    font-size: 22px;
     font-weight: bold;
-}
-
-.formulario input,
-.formulario select,
-.formulario textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #B58B83;
-    border-radius: 7px;
-    font: inherit;
-    background: white;
-}
-
-.formulario button {
-    margin-top: 10px;
-}
-
-/* NOSOTROS */
-
-.historia {
-    display: flex;
-    align-items: center;
-    gap: 35px;
-    background: white;
-    padding: 30px;
-    border-radius: 15px;
-}
-
-.historia img {
-    width: 220px;
-    max-width: 100%;
-    border-radius: 12px;
-}
-
-.historia h2 {
-    color: #65001F;
-    margin-bottom: 12px;
-}
-
-.historia p {
-    margin-bottom: 12px;
-}
-
-blockquote {
-    color: #65001F;
-    font-family: Georgia, serif;
-    font-style: italic;
-    margin-top: 20px;
-}
-
-/* CONTACTO */
-
-.contacto {
-    background: #F0E2D8;
-    max-width: 650px;
-    margin: auto;
-    padding: 35px;
-    text-align: center;
-    border-radius: 15px;
-}
-
-.contacto h2 {
-    color: #65001F;
-    margin-bottom: 20px;
-}
-
-.contacto p {
-    margin-bottom: 12px;
-}
-
-.contacto .boton {
-    margin-top: 15px;
+    margin: 12px 0;
 }
 
 /* PIE DE PÁGINA */
 
 footer {
-    background: #65001F;
+    background-color: #65001F;
     color: white;
     text-align: center;
     padding: 25px;
-    margin-top: 50px;
+    margin-top: 40px;
 }
 
-/* DISEÑO PARA CELULARES */
+/* TABLET */
+
+@media (max-width: 900px) {
+    .productos {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+}
+
+/* CELULAR */
 
 @media (max-width: 700px) {
     header {
         flex-direction: column;
+        text-align: center;
     }
 
     nav {
@@ -317,24 +235,18 @@ footer {
     }
 
     .portada {
-        padding: 35px 6%;
-        text-align: center;
+        padding: 45px 20px;
     }
 
     .portada h1 {
         font-size: 35px;
     }
 
-    .historia {
-        flex-direction: column;
-        text-align: center;
+    .producto {
+        padding: 12px;
     }
 
-    .historia img {
-        width: 180px;
-    }
-
-    .formulario {
-        padding: 20px;
+    .producto img {
+        height: 160px;
     }
 }
