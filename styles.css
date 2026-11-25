@@ -1,9 +1,18 @@
+/* =====================================
+   SELAH - BY BIJHANYILLY
+   ESTILOS PRINCIPALES
+===================================== */
+
 /* ESTILOS GENERALES */
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
@@ -24,6 +33,7 @@ header {
     align-items: center;
     flex-wrap: wrap;
     gap: 15px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.12);
 }
 
 .marca {
@@ -47,7 +57,7 @@ header {
 
 nav {
     display: flex;
-    gap: 20px;
+    gap: 22px;
     flex-wrap: wrap;
 }
 
@@ -56,22 +66,24 @@ nav a {
     text-decoration: none;
     font-weight: bold;
     transition: 0.3s;
+    padding: 7px 0;
 }
 
 nav a:hover,
 nav a.activo {
     color: #E6C9B8;
+    border-bottom: 2px solid #E6C9B8;
 }
 
 /* PORTADA */
 
 .portada {
-    min-height: 400px;
+    min-height: 420px;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 60px 8%;
-    background-color: #F0E2D8;
+    background: linear-gradient(135deg, #F0E2D8, #F8F3ED);
 }
 
 .portada-texto {
@@ -103,7 +115,7 @@ nav a.activo {
     display: inline-block;
     background-color: #65001F;
     color: white;
-    padding: 12px 22px;
+    padding: 12px 24px;
     border-radius: 8px;
     text-decoration: none;
     font-weight: bold;
@@ -115,14 +127,14 @@ nav a.activo {
 
 .boton:hover {
     background-color: #B58B83;
-    transform: translateY(-2px);
+    transform: translateY(-3px);
 }
 
 /* BIENVENIDA */
 
 .bienvenida {
     text-align: center;
-    padding: 45px 20px;
+    padding: 50px 20px;
 }
 
 .bienvenida h2 {
@@ -133,13 +145,14 @@ nav a.activo {
 }
 
 .bienvenida p {
-    margin-bottom: 15px;
+    max-width: 650px;
+    margin: 0 auto 15px;
 }
 
 /* PRODUCTOS */
 
 .destacados {
-    padding: 45px 6%;
+    padding: 50px 6%;
     text-align: center;
 }
 
@@ -147,32 +160,43 @@ nav a.activo {
     color: #65001F;
     font-family: Georgia, serif;
     font-size: 32px;
-    margin-bottom: 30px;
+    margin-bottom: 12px;
 }
+
+.descripcion-seccion {
+    margin-bottom: 25px;
+}
+
+/* CUADRÍCULA DE PRODUCTOS */
 
 .productos {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 22px;
     width: 100%;
     margin: 30px auto;
 }
 
+/* TARJETAS */
+
 .producto {
     background-color: white;
     padding: 16px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border-radius: 14px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
     text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    transition: 0.3s;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .producto:hover {
-    transform: translateY(-5px);
+    transform: translateY(-6px);
+    box-shadow: 0 8px 20px rgba(101, 0, 31, 0.15);
 }
+
+/* IMÁGENES DE BOLSOS */
 
 .producto img {
     width: 100%;
@@ -208,8 +232,12 @@ footer {
     background-color: #65001F;
     color: white;
     text-align: center;
-    padding: 25px;
+    padding: 30px 20px;
     margin-top: 40px;
+}
+
+footer p {
+    margin-bottom: 5px;
 }
 
 /* TABLET */
@@ -219,11 +247,16 @@ footer {
         grid-template-columns: repeat(2, 1fr);
         gap: 15px;
     }
+
+    .portada h1 {
+        font-size: 40px;
+    }
 }
 
 /* CELULAR */
 
 @media (max-width: 700px) {
+
     header {
         flex-direction: column;
         text-align: center;
@@ -234,19 +267,53 @@ footer {
         gap: 12px;
     }
 
+    nav a {
+        font-size: 14px;
+    }
+
     .portada {
         padding: 45px 20px;
+        min-height: 350px;
     }
 
     .portada h1 {
         font-size: 35px;
     }
 
+    .productos {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
     .producto {
-        padding: 12px;
+        padding: 10px;
     }
 
     .producto img {
-        height: 160px;
+        height: 150px;
+    }
+
+    .producto h2 {
+        font-size: 16px;
+    }
+
+    .precio {
+        font-size: 18px;
+    }
+
+    .producto .boton {
+        font-size: 12px;
+        padding: 9px;
+    }
+}
+
+/* ACCESIBILIDAD */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition: none !important;
     }
 }
