@@ -1,0 +1,167 @@
+/* =================================
+   KIT CSS - SELAH
+   BY BIJHANYILLY
+================================= */
+
+/* COLORES PRINCIPALES */
+
+:root {
+    --vinotinto: #65001F;
+    --rosa-antiguo: #B58B83;
+    --beige: #F8F3ED;
+    --beige-oscuro: #F0E2D8;
+    --cafe: #302522;
+    --blanco: #FFFFFF;
+}
+
+/* CONFIGURACIÓN GENERAL */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: var(--beige);
+    color: var(--cafe);
+    line-height: 1.6;
+}
+
+/* CONTENEDORES */
+
+.contenedor {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.seccion {
+    padding: 50px 20px;
+}
+
+.texto-centro {
+    text-align: center;
+}
+
+/* ENCABEZADOS */
+
+h1, h2, h3 {
+    color: var(--vinotinto);
+    font-family: Georgia, serif;
+}
+
+h1 {
+    font-size: 40px;
+}
+
+h2 {
+    font-size: 30px;
+}
+
+p {
+    margin-bottom: 10px;
+}
+
+/* BOTONES */
+
+.boton {
+    display: inline-block;
+    padding: 12px 24px;
+    background: var(--vinotinto);
+    color: var(--blanco);
+    text-decoration: none;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.boton:hover {
+    background: var(--rosa-antiguo);
+}
+
+/* IMÁGENES */
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* TARJETAS */
+
+.tarjeta {
+    background: var(--blanco);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* CUADRÍCULA */
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+/* FORMULARIOS */
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--rosa-antiguo);
+    border-radius: 7px;
+    font-family: Arial, sans-serif;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 2px solid var(--rosa-antiguo);
+}
+
+/* PRECIOS */
+
+.precio {
+    color: var(--vinotinto);
+    font-size: 22px;
+    font-weight: bold;
+}
+
+/* PIE DE PÁGINA */
+
+footer {
+    background: var(--vinotinto);
+    color: var(--blanco);
+    text-align: center;
+    padding: 25px;
+}
+
+/* ADAPTACIÓN A CELULARES */
+
+@media (max-width: 700px) {
+    h1 {
+        font-size: 32px;
+    }
+
+    h2 {
+        font-size: 25px;
+    }
+
+    .contenedor {
+        width: 94%;
+    }
+
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+}
