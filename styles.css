@@ -1,0 +1,252 @@
+/* ESTILOS GENERALES */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #F8F3ED;
+    color: #302522;
+    line-height: 1.6;
+}
+
+/* ENCABEZADO */
+
+header {
+    background-color: #65001F;
+    color: white;
+    padding: 15px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.marca {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.marca img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* MENÚ */
+
+nav {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav a:hover,
+nav a.activo {
+    color: #E6C9B8;
+}
+
+/* PORTADA */
+
+.portada {
+    min-height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 8%;
+    background-color: #F0E2D8;
+}
+
+.portada-texto {
+    max-width: 750px;
+    text-align: center;
+}
+
+.subtitulo {
+    color: #B58B83;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.portada h1 {
+    color: #65001F;
+    font-family: Georgia, serif;
+    font-size: 48px;
+    margin: 15px 0;
+}
+
+.portada-texto p {
+    margin-bottom: 20px;
+    font-size: 17px;
+}
+
+/* BOTONES */
+
+.boton {
+    display: inline-block;
+    background-color: #65001F;
+    color: white;
+    padding: 12px 22px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 10px;
+}
+
+.boton:hover {
+    background-color: #B58B83;
+    transform: translateY(-2px);
+}
+
+/* BIENVENIDA */
+
+.bienvenida {
+    text-align: center;
+    padding: 45px 20px;
+}
+
+.bienvenida h2 {
+    color: #65001F;
+    font-family: Georgia, serif;
+    font-size: 30px;
+    margin-bottom: 12px;
+}
+
+.bienvenida p {
+    margin-bottom: 15px;
+}
+
+/* PRODUCTOS */
+
+.destacados {
+    padding: 45px 6%;
+    text-align: center;
+}
+
+.destacados > h2 {
+    color: #65001F;
+    font-family: Georgia, serif;
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+
+.productos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    width: 100%;
+    margin: 30px auto;
+}
+
+.producto {
+    background-color: white;
+    padding: 16px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: 0.3s;
+}
+
+.producto:hover {
+    transform: translateY(-5px);
+}
+
+.producto img {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    border-radius: 8px;
+    margin-bottom: 12px;
+}
+
+.producto h2,
+.producto h3 {
+    color: #65001F;
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.producto p {
+    margin-bottom: 8px;
+}
+
+/* PRECIOS */
+
+.precio {
+    color: #65001F;
+    font-size: 22px;
+    font-weight: bold;
+    margin: 12px 0;
+}
+
+/* PIE DE PÁGINA */
+
+footer {
+    background-color: #65001F;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    margin-top: 40px;
+}
+
+/* TABLET */
+
+@media (max-width: 900px) {
+    .productos {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+}
+
+/* CELULAR */
+
+@media (max-width: 700px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav {
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .portada {
+        padding: 45px 20px;
+    }
+
+    .portada h1 {
+        font-size: 35px;
+    }
+
+    .producto {
+        padding: 12px;
+    }
+
+    .producto img {
+        height: 160px;
+    }
+}
