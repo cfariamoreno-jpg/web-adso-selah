@@ -1,0 +1,710 @@
+/* ============================================================
+   SELAH – BY BIJHANYILLY | CONTACTO
+   01. Identidad y base autónoma. No importa otras hojas CSS.
+   ============================================================ */
+:root {
+    --vinotinto: #65001F;
+    --rosa-antiguo: #B58B83;
+    --beige: #F8F3ED;
+    --beige-oscuro: #F0E2D8;
+    --cafe: #302522;
+    --blanco: #FFFFFF;
+    --sombra: 0 5px 18px rgba(48, 37, 34, .10);
+    --fuente-titulos: Georgia, serif;
+    --fuente-texto: Arial, sans-serif;
+}
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    margin: 0;
+    background: var(--beige);
+    color: var(--cafe);
+    font: 1rem/1.65 var(--fuente-texto);
+}
+h1, h2, h3, p, blockquote {
+    margin: 0;
+}
+h1, h2, h3 {
+    color: var(--vinotinto);
+    font-family: var(--fuente-titulos);
+    line-height: 1.25;
+}
+p {
+    margin-bottom: 12px;
+}
+img {
+    display: block;
+    max-width: 100%;
+}
+button, input, select, textarea {
+    font: inherit;
+}
+input, select, textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 8px;
+    background: var(--blanco);
+}
+/* 02. Encabezado y pie de página: identidad compartida, reglas locales. */
+.pagina-contacto > header {
+    background: var(--vinotinto);
+    color: white;
+    padding: 15px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    box-shadow: 0 3px 12px #30252220;
+}
+.pagina-contacto .marca {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+}
+.pagina-contacto .marca img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.pagina-contacto > header nav {
+    display: flex;
+    gap: 22px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.pagina-contacto > header nav a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 7px 0;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    border-bottom: 2px solid transparent;
+    transition: color .2s, border-color .2s;
+}
+.pagina-contacto > header nav a:is(:hover, .activo) {
+    color: #E6C9B8;
+    border-color: #E6C9B8;
+}
+.pagina-contacto > footer {
+    background: var(--vinotinto);
+    color: white;
+    text-align: center;
+    padding: 32px 20px;
+}
+.pagina-contacto > footer p {
+    margin-bottom: 5px;
+}
+.pagina-contacto > footer .copyright {
+    color: #F0E2D8;
+    font-size: .82rem;
+    margin-top: 12px;
+}
+.pagina-contacto footer :focus-visible {
+    outline-color: white;
+}
+
+/* 03. Contenedores, tipografía, navegación contextual y foco. */
+.pagina-contacto {
+    --ct-borde: #d6bfaf;
+    --ct-muted: #65534d;
+    --ct-error: #9d1636;
+}
+.pagina-contacto [hidden] {
+    display: none !important;
+}
+.pagina-contacto .ct-contenedor {
+    width: min(90%, 1160px);
+    margin-inline: auto;
+}
+.pagina-contacto .ct-ruta {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    padding-block: 22px;
+    font-size: .86rem;
+    color: var(--ct-muted);
+}
+.pagina-contacto .ct-ruta a {
+    color: var(--vinotinto);
+}
+.pagina-contacto .ct-saltar {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    z-index: 10;
+    padding: 12px;
+    background: white;
+    color: var(--vinotinto);
+    transform: translateY(-200%);
+}
+.pagina-contacto .ct-saltar:focus {
+    transform: none;
+}
+.pagina-contacto :focus-visible {
+    outline: 3px solid var(--vinotinto);
+    outline-offset: 4px;
+}
+.pagina-contacto header :focus-visible, .pagina-contacto .ct-lateral :focus-visible {
+    outline-color: var(--blanco);
+}
+/* Portada: dos columnas, fotografía del catálogo y composición editorial. */
+.pagina-contacto .ct-portada {
+    display: grid;
+    grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+    align-items: stretch;
+    background: linear-gradient(125deg, var(--beige-oscuro), var(--beige));
+    border: 1px solid var(--ct-borde);
+    border-radius: 20px;
+    overflow: hidden;
+}
+.pagina-contacto .ct-portada-texto {
+    align-self: center;
+    padding: clamp(24px, 5vw, 64px);
+}
+.pagina-contacto .ct-etiqueta {
+    color: var(--vinotinto);
+    font-size: .72rem;
+    font-weight: 700;
+    letter-spacing: .17em;
+    margin-bottom: 12px;
+}
+.pagina-contacto h1 {
+    font-size: clamp(2rem, 4.3vw, 3.6rem);
+    line-height: 1.12;
+    letter-spacing: -.035em;
+    margin-bottom: 20px;
+}
+.pagina-contacto h2 {
+    font-size: clamp(1.65rem, 2.7vw, 2.25rem);
+    margin-bottom: 12px;
+}
+.pagina-contacto h3 {
+    font-size: 1.25rem;
+    margin-bottom: 8px;
+}
+.pagina-contacto .ct-portada-texto > p:not(.ct-etiqueta) {
+    max-width: 48ch;
+    margin-bottom: 24px;
+}
+.pagina-contacto .ct-editorial {
+    display: grid;
+    grid-template-rows: minmax(220px, 1fr) auto;
+    background: var(--blanco);
+    min-width: 0;
+}
+.pagina-contacto .ct-editorial img {
+    width: 100%;
+    height: 100%;
+    max-height: 440px;
+    min-height: 220px;
+    object-fit: contain;
+    padding: 24px;
+}
+.pagina-contacto .ct-editorial-texto {
+    display: grid;
+    gap: 2px;
+    background: var(--vinotinto);
+    color: white;
+    padding: 16px 24px;
+}
+.pagina-contacto .ct-editorial-texto span {
+    font: italic 1.25rem Georgia, serif;
+}
+.pagina-contacto .ct-editorial-texto small {
+    font-size: .68rem;
+    letter-spacing: .16em;
+}
+/* Botones propios: evitan colisiones con .boton del resto del sitio. */
+.pagina-contacto .ct-boton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    min-height: 46px;
+    padding: 12px 19px;
+    border: 1px solid var(--vinotinto);
+    border-radius: 8px;
+    font: 700 .94rem Arial, sans-serif;
+    line-height: 1.4;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background .2s, color .2s, transform .2s, box-shadow .2s;
+}
+.pagina-contacto .ct-primario {
+    background: var(--vinotinto);
+    color: white;
+}
+.pagina-contacto .ct-primario:hover {
+    background: #470016;
+}
+.pagina-contacto .ct-secundario {
+    background: transparent;
+    color: var(--vinotinto);
+}
+.pagina-contacto .ct-secundario:hover {
+    background: var(--beige-oscuro);
+}
+.pagina-contacto .ct-enlace {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    min-height: 44px;
+    color: var(--vinotinto);
+    font-size: .92rem;
+    font-weight: 700;
+    text-underline-offset: 4px;
+}
+.pagina-contacto .ct-portada-texto .ct-enlace {
+    margin-left: 12px;
+}
+.pagina-contacto .ct-bloque {
+    margin-top: clamp(40px, 6vw, 76px);
+    scroll-margin-top: 20px;
+}
+/* Tarjetas de servicio con Grid. */
+.pagina-contacto .ct-servicios {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+    margin-top: 22px;
+}
+.pagina-contacto .ct-servicio {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 24px;
+    background: var(--blanco);
+    border: 1px solid var(--ct-borde);
+    border-radius: 14px;
+}
+.pagina-contacto .ct-servicio svg {
+    width: 40px;
+    height: 40px;
+    padding: 7px;
+    background: var(--beige);
+    border-radius: 10px;
+    color: var(--vinotinto);
+    margin-bottom: 16px;
+}
+.pagina-contacto .ct-servicio .ct-enlace {
+    margin-top: auto;
+}
+/* Área de atención: formulario flexible y panel lateral. */
+.pagina-contacto .ct-atencion {
+    display: grid;
+    grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+    gap: 20px;
+    align-items: start;
+}
+.pagina-contacto .ct-panel, .pagina-contacto .ct-lateral {
+    border-radius: 16px;
+    padding: clamp(20px, 3.2vw, 40px);
+    min-width: 0;
+}
+.pagina-contacto .ct-panel {
+    background: white;
+    border: 1px solid var(--ct-borde);
+    box-shadow: var(--sombra);
+}
+.pagina-contacto .ct-campos {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 17px;
+    margin-block: 24px 18px;
+}
+.pagina-contacto .ct-campo {
+    min-width: 0;
+}
+.pagina-contacto .ct-ancho {
+    grid-column: 1 / -1;
+}
+.pagina-contacto .ct-campo label {
+    display: block;
+    margin-bottom: 7px;
+    font-size: .9rem;
+    font-weight: 700;
+}
+.pagina-contacto .ct-campo :is(input, select, textarea) {
+    min-height: 46px;
+    font-size: 1rem;
+    color: var(--cafe);
+    border: 1px solid #92766c;
+    transition: border-color .2s, box-shadow .2s;
+}
+.pagina-contacto .ct-campo textarea {
+    resize: vertical;
+    min-height: 130px;
+}
+.pagina-contacto .ct-campo [aria-invalid="true"] {
+    border: 2px solid var(--ct-error);
+}
+.pagina-contacto .ct-error {
+    display: block;
+    color: var(--ct-error);
+    font-size: .82rem;
+}
+.pagina-contacto .ct-error:empty {
+    display: none;
+}
+.pagina-contacto .ct-nota-fila {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 4px;
+    color: var(--ct-muted);
+}
+.pagina-contacto .ct-privacidad {
+    padding: 14px 16px;
+    background: var(--beige);
+    border-left: 3px solid var(--rosa-antiguo);
+    font-size: .85rem;
+    margin-bottom: 18px;
+}
+.pagina-contacto .ct-privacidad p {
+    margin: 4px 0 0;
+}
+.pagina-contacto .ct-estado {
+    margin: 10px 0 0;
+    color: var(--vinotinto);
+    font-size: .9rem;
+}
+.pagina-contacto .ct-estado:empty {
+    display: none;
+}
+.pagina-contacto .ct-resultado {
+    margin-top: 22px;
+    padding: 18px;
+    border: 1px solid var(--ct-borde);
+    background: var(--beige);
+    border-radius: 12px;
+}
+.pagina-contacto .ct-resultado pre {
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    font: inherit;
+    padding: 12px;
+    background: white;
+    border-radius: 8px;
+    margin-block: 12px;
+    user-select: text;
+}
+.pagina-contacto .ct-acciones {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+.pagina-contacto .ct-lateral {
+    background: var(--vinotinto);
+    color: white;
+}
+.pagina-contacto .ct-lateral :is(h2,h3,.ct-etiqueta,.ct-enlace) {
+    color: white;
+}
+.pagina-contacto .ct-lateral .ct-etiqueta {
+    color: #f0d7ca;
+}
+.pagina-contacto .ct-dato {
+    padding-block: 18px;
+    border-bottom: 1px solid #ffffff40;
+    overflow-wrap: anywhere;
+}
+.pagina-contacto .ct-dato p {
+    margin: 0;
+    color: #f8eae5;
+}
+.pagina-contacto .ct-lateral blockquote {
+    font: italic 1.1rem/1.65 Georgia, serif;
+    margin-top: 26px;
+}
+.pagina-contacto .ct-lateral cite {
+    display: block;
+    margin-top: 9px;
+    font: 700 .78rem Arial, sans-serif;
+    letter-spacing: .08em;
+}
+/* Preguntas frecuentes nativas y llamada final a explorar. */
+.pagina-contacto .ct-faq {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.7fr);
+    gap: 32px;
+}
+.pagina-contacto .ct-acordeones details {
+    border-bottom: 1px solid var(--ct-borde);
+}
+.pagina-contacto .ct-acordeones summary {
+    padding: 17px 0;
+    min-height: 44px;
+    cursor: pointer;
+    font-weight: 700;
+    color: var(--vinotinto);
+    list-style-position: inside;
+}
+.pagina-contacto .ct-acordeones details p {
+    padding: 0 12px 10px 0;
+}
+.pagina-contacto .ct-acordeones a {
+    color: var(--vinotinto);
+}
+.pagina-contacto .ct-cierre {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-block: 60px;
+    padding: clamp(20px, 4vw, 40px);
+    border: 1px solid var(--ct-borde);
+    background: var(--beige-oscuro);
+    border-radius: 16px;
+}
+.pagina-contacto .ct-cierre p:last-child {
+    margin-bottom: 0;
+}
+/* Adaptación progresiva: tablet, celular y preferencias de movimiento. */
+@media (max-width: 900px) {
+    .pagina-contacto .ct-atencion {
+        grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+    }
+    .pagina-contacto .ct-campos {
+        grid-template-columns: 1fr;
+    }
+    .pagina-contacto .ct-servicio {
+        padding: 17px;
+    }
+}
+@media (max-width: 700px) {
+    .pagina-contacto .ct-contenedor {
+        width: 92%;
+    }
+    .pagina-contacto :is(.ct-portada,.ct-atencion,.ct-faq,.ct-servicios) {
+        grid-template-columns: 1fr;
+    }
+    .pagina-contacto .ct-salto {
+        display: none;
+    }
+    .pagina-contacto .ct-editorial img {
+        max-height: 240px;
+    }
+    .pagina-contacto .ct-portada-texto .ct-enlace {
+        margin-left: 0;
+        margin-top: 6px;
+        display: flex;
+        width: fit-content;
+    }
+    .pagina-contacto > header nav a {
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+    }
+    .pagina-contacto .ct-cierre {
+        margin-block: 40px;
+    }
+}
+
+
+/* 04. Refinamiento editorial y estados de interacción.
+   Las animaciones no son necesarias para acceder al contenido. */
+.pagina-contacto .ct-portada {
+    box-shadow: 0 16px 40px #3025220d;
+}
+.pagina-contacto .ct-portada-texto {
+    position: relative;
+}
+.pagina-contacto .ct-portada-texto .ct-etiqueta::before {
+    content: ""; display: block; width: 44px; height: 2px;
+    background: var(--rosa-antiguo); margin-bottom: 16px;
+}
+.pagina-contacto .ct-editorial {
+    overflow: hidden;
+    background: linear-gradient(155deg, #fff, #f8f3ed);
+}
+.pagina-contacto .ct-editorial img {
+    transition: transform .35s ease;
+    align-self: center;
+}
+.pagina-contacto .ct-imagen-aviso {
+    min-height: 220px;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    padding: 20px;
+    color: var(--ct-muted);
+    margin: 0;
+}
+.pagina-contacto .ct-editorial-texto {
+    padding-block: 20px;
+    border-top: 1px solid var(--ct-borde);
+}
+.pagina-contacto .ct-servicio {
+    box-shadow: 0 5px 18px #30252208;
+    transition: transform .22s, box-shadow .22s, border-color .22s;
+}
+.pagina-contacto .ct-servicio svg {
+    width: 46px;
+    height: 46px;
+    padding: 10px;
+}
+.pagina-contacto .ct-servicio p {
+    color: var(--ct-muted);
+}
+.pagina-contacto .ct-servicio .ct-enlace + .ct-enlace {
+    margin-top: 0;
+}
+.pagina-contacto .ct-enlace {
+    text-decoration-thickness: 1px;
+}
+.pagina-contacto .ct-boton:active {
+    transform: translateY(1px);
+}
+.pagina-contacto .ct-campo :is(input, select, textarea):focus {
+    border-color: var(--vinotinto);
+    box-shadow: 0 0 0 3px #65001f12;
+}
+.pagina-contacto .ct-campo [aria-invalid="true"]:focus {
+    border-color: var(--ct-error);
+}
+.pagina-contacto .ct-campo :is(input, textarea)::placeholder {
+    color: #74635d;
+}
+.pagina-contacto .ct-lateral {
+    background: linear-gradient(150deg, var(--vinotinto), #4b0018);
+    box-shadow: 0 10px 30px #65001f20;
+}
+.pagina-contacto .ct-lateral blockquote {
+    padding-left: 16px;
+    border-left: 2px solid var(--rosa-antiguo);
+}
+.pagina-contacto .ct-acordeones details {
+    background: #ffffff85;
+    border: 1px solid var(--ct-borde);
+    border-radius: 10px;
+    margin-bottom: 9px;
+}
+.pagina-contacto .ct-acordeones summary {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 15px 18px;
+    border-radius: 10px;
+}
+.pagina-contacto .ct-acordeones summary::-webkit-details-marker {
+    display: none;
+}
+.pagina-contacto .ct-acordeones summary::after {
+    content: "";
+    width: 9px;
+    height: 9px;
+    flex: 0 0 9px;
+    border-right: 2px solid currentColor;
+    border-bottom: 2px solid currentColor;
+    transform: rotate(45deg);
+    transition: transform .2s;
+}
+.pagina-contacto .ct-acordeones details[open] summary::after {
+    transform: rotate(225deg);
+}
+.pagina-contacto .ct-acordeones details[open] summary {
+    background: var(--beige-oscuro);
+    border-radius: 9px 9px 0 0;
+}
+.pagina-contacto .ct-acordeones details p {
+    padding: 14px 18px 4px;
+}
+.pagina-contacto .ct-cierre {
+    background: linear-gradient(120deg, var(--beige-oscuro), #fff);
+}
+.pagina-contacto .ct-aviso {
+    padding: 14px;
+    background: var(--beige-oscuro);
+    border-radius: 8px;
+}
+.pagina-contacto :is(.ct-enlace, .ct-boton, summary, .ct-campo) {
+    overflow-wrap: anywhere;
+}
+@media (hover: hover) and (pointer: fine) {
+    .pagina-contacto .ct-servicio:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 25px #30252212;
+        border-color: var(--rosa-antiguo);
+    }
+    .pagina-contacto .ct-editorial:hover img {
+        transform: scale(1.025);
+    }
+    .pagina-contacto .ct-boton:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 15px #65001f20;
+    }
+    .pagina-contacto .ct-enlace:hover {
+        text-decoration-thickness: 2px;
+    }
+    .pagina-contacto .ct-acordeones summary:hover {
+        background: var(--beige-oscuro);
+    }
+}
+/* 05. Adaptación del encabezado y controles a pantallas estrechas. */
+@media (max-width: 700px) {
+    .pagina-contacto > header {
+        flex-direction: column;
+    }
+    .pagina-contacto > header nav {
+        justify-content: center;
+        gap: 6px 13px;
+    }
+    .pagina-contacto > header nav a {
+        font-size: .875rem;
+    }
+    .pagina-contacto .ct-portada-texto {
+        padding: 26px 22px;
+    }
+    .pagina-contacto .ct-editorial {
+        grid-template-rows: minmax(220px, auto) auto;
+    }
+    .pagina-contacto .ct-editorial img {
+        height: 240px;
+    }
+    .pagina-contacto .ct-faq {
+        gap: 14px;
+    }
+}
+@media (max-width: 390px) {
+    .pagina-contacto .ct-acciones > *, .pagina-contacto .ct-panel form > .ct-boton {
+        width: 100%;
+    }
+}
+/* 06. Accesibilidad: respetar preferencias de movimiento y modo de contraste. */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+    .pagina-contacto *, .pagina-contacto *::before, .pagina-contacto *::after {
+        transition: none !important;
+        animation: none !important;
+        scroll-behavior: auto !important;
+    }
+    .pagina-contacto :is(.ct-boton,.ct-servicio):hover, .pagina-contacto .ct-editorial:hover img {
+        transform: none;
+    }
+}
+@media (forced-colors: active) {
+    .pagina-contacto .ct-campo [aria-invalid="true"] {
+        border: 2px dashed Mark;
+    }
+    .pagina-contacto :focus-visible {
+        outline: 3px solid Highlight;
+    }
+}
